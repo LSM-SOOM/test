@@ -1,0 +1,17 @@
+#!/bin/sh
+git_command()
+{
+	if [ $# -eq 0 ]; then
+		git add .
+		git commit -m "commit"
+		git push
+	elif [ $# -eq 1 ]; then
+		git add $1
+		git commit -m "commit"
+		git push
+	else
+		echo "Usage : gitupload or gitupload <file name>"
+	fi
+}
+
+git_command $1
